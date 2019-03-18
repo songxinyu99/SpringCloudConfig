@@ -1,0 +1,27 @@
+
+server:
+  port: 8081
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+spring:
+  application:
+    name: eurka-server
+  cloud:
+    service:
+      git:
+        url: https://github.com/songxinyu99/SpringCloudConfig
+        searchPaths: pespo
+    config:
+      label: master
+      server:
+        git:
+          username:
+          password:
